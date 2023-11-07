@@ -1,0 +1,15 @@
+listview {
+    min-width: 250px;
+    padding: 5px;
+}
+listview row {
+    padding: 18px 0;
+    border-radius: 4px;
+}
+listview row:hover {
+    background-color: #f5e76c;
+}
+
+textview.view {
+    padding: 5px;
+}
