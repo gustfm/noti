@@ -75,6 +75,28 @@ GList *get_notes()
     return notes;
 }
 
+char *get_note_content(char *filename)
+{
+    FILE *fp;
+    fp = open_note_file(filename);
+    if (!fp)
+    {
+        printf("Unable to start fp (FILE*) object.");
+        exit(0);
+    }
+    char *response = NULL;
+    fscanf(fp, "%ms\n", &response);
+    return response;
+}
+
+// int main()
+// {
+//     // char *content = get_note_content("file1.txt");
+//     get_note_content("file_1.txt");
+//     // printf("%s\n", get_note_content("file1.txt"));
+//     return 0;
+// }
+
 // int main()
 // {
 //     FILE *fp;

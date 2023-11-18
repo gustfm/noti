@@ -58,11 +58,12 @@ GtkWidget *create_grid(GtkWidget *window)
     return grid;
 }
 
-void add_item(GtkWidget *listbox, char *text)
+void add_item(GtkWidget *listbox, char *filename)
 {
     GtkWidget *row = gtk_list_box_row_new();
-    gtk_list_box_row_set_child(GTK_LIST_BOX_ROW(row), gtk_label_new(text));
-    g_object_set_data(G_OBJECT(row), "text", text);
+    gtk_list_box_row_set_child(GTK_LIST_BOX_ROW(row), gtk_label_new(filename));
+    char *content = get_note_content(filename);
+    g_object_set_data(G_OBJECT(row), "text", content);
     gtk_list_box_insert(GTK_LIST_BOX(listbox), row, -1);
 }
 
@@ -77,8 +78,6 @@ GtkWidget *create_notes_list(GtkWidget *window)
     for (GList *iter = notes; iter->next != NULL; iter = iter->next)
     {
         char *filename = ((Note *)(iter->data))->filename;
-        // int id = ((Note *)(iter->data))->;
-        printf("%s\n", ((Note *)(iter->data))->filename);
         add_item(listbox, filename);
     }
 
