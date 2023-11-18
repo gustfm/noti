@@ -1,0 +1,1 @@
+clear;gcc `pkg-config --cflags gtk4 glib-2.0` -o bin/main main.c `pkg-config --libs gtk4 glib-2.0` && ./bin/main;

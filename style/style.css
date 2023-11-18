@@ -1,13 +1,17 @@
-listview {
+list {
     min-width: 250px;
     padding: 5px;
 }
-listview row {
+list row {
     padding: 18px 0;
     border-radius: 4px;
 }
-listview row:hover {
+list row:hover {
+    background-color: #fdf396;
+}
+list row:selected {
     background-color: #f5e76c;
+    color: #212121;
 }
 
 textview.view {

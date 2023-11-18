@@ -1,0 +1,34 @@
+// printf("%s\n", ((Note *)(notes->data))->filename);
+// printf("%s\n", ((Note *)(notes->data))->created_at);
+
+// GtkWidget *list_view = gtk_list_view_new(NULL, NULL);
+// GListStore *store = g_list_store_new(G_TYPE_STRING);
+// gtk_list_view_set_model(GTK_LIST_VIEW(list_view), GTK_SELECTION_MODEL(store));
+
+// append_text(list_view, "Item 1");
+// append_text(list_view, "Item 2");
+// append_text(list_view, "Item 3");
+
+// GtkSelectionModel *model = GTK_SELECTION_MODEL(gtk_single_selection_new(G_LIST_MODEL(notes)));
+
+// char *_notes[] = {
+//     "one", "two", "three", "four", NULL};
+
+// GtkStringList *notes_string_list = gtk_string_list_new((const char *const *)_notes);
+// GtkNoSelection *notes_no_selection = gtk_no_selection_new(G_LIST_MODEL(notes_string_list));
+
+// GtkListItemFactory *factory = gtk_signal_list_item_factory_new();
+// g_signal_connect(factory, "setup", G_CALLBACK(setup_cb), NULL);
+// g_signal_connect(factory, "bind", G_CALLBACK(bind_cb), NULL);
+
+// GtkWidget *list = gtk_list_view_new(GTK_SELECTION_MODEL(notes_no_selection), factory);
+g_signal_connect(listbox, "row-activated", G_CALLBACK(activate_cb), NULL);
+// gtk_list_view_set_single_click_activate(GTK_LIST_VIEW(list), TRUE);
+// gtk_window_present(GTK_WINDOW(window));
+return listbox;
+
+// GtkSelectionModel *model = GTK_SELECTION_MODEL(gtk_single_selection_new(G_LIST_MODEL(notes)));
+
+// GtkWidget *list_view = gtk_list_view_new();
+
+// gtk_list_view_set_model(list_view);
