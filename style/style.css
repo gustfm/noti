@@ -1,19 +1,43 @@
 list {
     min-width: 250px;
-    padding: 5px;
+    padding: 8px;
+    background: #e6e5e5;
+    border-right: 1px solid #dbdbdb;
 }
 list row {
-    padding: 18px 0;
-    border-radius: 4px;
+    padding: 18px 5px;
+    border-radius: 10px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 3px;
 }
-list row:hover {
-    background-color: #fdf396;
-}
+list row:hover,
 list row:selected {
-    background-color: #f5e76c;
-    color: #212121;
+    background: #ebc44c;
+    color: white;
 }
 
 textview.view {
-    padding: 5px;
+    padding: 8px;
+}
+
+.editor_menu {
+    padding: 13px 15px;
+    background: #fff;
+    border-bottom: 1px solid #e6e5e5;
+}
+.save_button {
+    border: 0px;
+    padding: 0px;
+    box-shadow: 0 0 0 0 rgb(0, 0, 0);
+    outline: none;
+    background: #ffffff;
+}
+.save_button:hover {
+    background: #f4f4f4;
+}
+.save_button.image-button {
+    min-width: 30px;
+    min-height: 30px;
+    transform: scale(1.6);
 }

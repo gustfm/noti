@@ -9,7 +9,7 @@
 char *get_db_file_path();
 char *get_files_path();
 FILE *open_db_file();
-FILE *open_note_file(char *filename);
+FILE *open_note_file(char *filename, char mode[1]);
 int get_row(FILE *fp, char response[60]);
 char *get_str(char row[60]);
 

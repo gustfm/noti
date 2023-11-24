@@ -71,22 +71,47 @@ GList *get_notes()
         rows_length = get_row(fp, response);
         id++;
     }
+    fclose(fp);
 
     return notes;
+}
+
+long get_file_size(FILE *fp)
+{
+
+    fseek(fp, 0, SEEK_END);
+    long size = ftell(fp);
+    fseek(fp, 0, SEEK_SET);
+    return size;
 }
 
 char *get_note_content(char *filename)
 {
     FILE *fp;
-    fp = open_note_file(filename);
+    fp = open_note_file(filename, "r");
     if (!fp)
     {
         printf("Unable to start fp (FILE*) object.");
         exit(0);
     }
-    char *response = NULL;
-    fscanf(fp, "%ms\n", &response);
+    long size = get_file_size(fp);
+    char *response = malloc(size);
+    fread(response, 1, size, fp);
+    fclose(fp);
     return response;
+}
+
+void set_note_content(char *filename, char *content)
+{
+    FILE *fp;
+    fp = open_note_file(filename, "w+");
+    if (!fp)
+    {
+        printf("Unable to start fp (FILE*) object in write mode.");
+        exit(0);
+    }
+    fputs(content, fp);
+    fclose(fp);
 }
 
 // int main()
