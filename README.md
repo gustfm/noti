@@ -1,5 +1,5 @@
 # noti
-A simple and o efficient notes app inspired on apple notes structure 🎉.
+A simple and o efficient notes app 🎉.
 
 # Describes
 https://build-your-own.org/redis/
